@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Menu">
+
+    <CheckBox
+        android:id="@+id/item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="CheckedBox"
+        android:text="Kacchi Biryani"
+        />
+    <CheckBox
+        android:id="@+id/item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="CheckedBox"
+        android:text="Bhuna Khichuri"
+        />
+    <CheckBox
+        android:id="@+id/item3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:onClick="CheckedBox"
+        android:text="Patla Khichuri"
+        />
+
+    <CheckBox
+        android:id="@+id/item4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:onClick="CheckedBox"
+        android:text="Morog Polao"
+        />
+
+    <CheckBox
+        android:id="@+id/item5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:onClick="CheckedBox"
+        android:text="Rice with (Vorta,Vaji and Daal)"
+        />
+
+    <CheckBox
+        android:id="@+id/item6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:onClick="CheckedBox"
+        android:text="Grilled Chicken "
+        />
+
+    <CheckBox
+        android:id="@+id/item7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:onClick="CheckedBox"
+        android:text="Haleem"
+        />
+    <CheckBox
+        android:id="@+id/item8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:onClick="CheckedBox"
+        android:text="Sheek Kabab"
+        />
+    <CheckBox
+        android:id="@+id/item9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:onClick="CheckedBox"
+        android:text="Fuchka"
+        />
+
+    <CheckBox
+        android:id="@+id/item10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
+        android:onClick="CheckedBox"
+        android:text= "Misti Doi"
+        />
+    <CheckBox
+        android:id="@+id/item11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:onClick="CheckedBox"
+        android:text="Doi Chira"
+        />
+
+    <CheckBox
+        android:id="@+id/item12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:onClick="CheckedBox"
+        android:text="Falooda"
+        />
+
+    <CheckBox
+        android:id="@+id/item13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:onClick="CheckedBox"
+        android:text="Rashmalai"
+        />
+
+    <CheckBox
+        android:id="@+id/item14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:onClick="CheckedBox"
+        android:text="Borhani"
+        />
+
+    <CheckBox
+        android:id="@+id/item15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp"
+        android:onClick="CheckedBox"
+        android:text="Lassi"
+        />
+
+        <!--Place Order-->
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="470dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:text="Place Order" />
+
+
+</RelativeLayout>

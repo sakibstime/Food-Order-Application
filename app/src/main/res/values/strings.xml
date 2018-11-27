@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Food Order</string>
+    <string name="call">Call</string>
+    <string name="send_sms">Send SMS</string>
+</resources>
