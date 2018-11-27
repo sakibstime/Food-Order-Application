@@ -1,0 +1,586 @@
+=====================================================================
+                               activity_menu.xml
+=====================================================================                               
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Menu">
+
+    <CheckBox
+        android:id="@+id/item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="CheckedBox"
+        android:text="Kacchi Biryani"
+        />
+    <CheckBox
+        android:id="@+id/item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="CheckedBox"
+        android:text="Bhuna Khichuri"
+        />
+    <CheckBox
+        android:id="@+id/item3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:onClick="CheckedBox"
+        android:text="Patla Khichuri"
+        />
+
+    <CheckBox
+        android:id="@+id/item4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:onClick="CheckedBox"
+        android:text="Morog Polao"
+        />
+
+    <CheckBox
+        android:id="@+id/item5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:onClick="CheckedBox"
+        android:text="Rice with (Vorta,Vaji and Daal)"
+        />
+
+    <CheckBox
+        android:id="@+id/item6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:onClick="CheckedBox"
+        android:text="Grilled Chicken "
+        />
+
+    <CheckBox
+        android:id="@+id/item7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:onClick="CheckedBox"
+        android:text="Haleem"
+        />
+    <CheckBox
+        android:id="@+id/item8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:onClick="CheckedBox"
+        android:text="Sheek Kabab"
+        />
+    <CheckBox
+        android:id="@+id/item9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:onClick="CheckedBox"
+        android:text="Fuchka"
+        />
+
+    <CheckBox
+        android:id="@+id/item10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
+        android:onClick="CheckedBox"
+        android:text= "Misti Doi"
+        />
+    <CheckBox
+        android:id="@+id/item11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:onClick="CheckedBox"
+        android:text="Doi Chira"
+        />
+
+    <CheckBox
+        android:id="@+id/item12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:onClick="CheckedBox"
+        android:text="Falooda"
+        />
+
+    <CheckBox
+        android:id="@+id/item13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:onClick="CheckedBox"
+        android:text="Rashmalai"
+        />
+
+    <CheckBox
+        android:id="@+id/item14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:onClick="CheckedBox"
+        android:text="Borhani"
+        />
+
+    <CheckBox
+        android:id="@+id/item15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp"
+        android:onClick="CheckedBox"
+        android:text="Lassi"
+        />
+
+        <!--Place Order-->
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="470dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:text="Place Order" />
+        
+</RelativeLayout>
+
+===================================================================================
+                                   Menu.java
+===================================================================================                                   
+
+package blog.techanimate.sakib.foodorder;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+
+public class Menu extends AppCompatActivity {
+      
+    
+    public static final String FINAL_SELECTION = "blog.techanimate.sakib.foodorder.FINAL_SELECTION";     
+    public static final String FINAL_RESULT = "blog.techanimate.sakib.foodorder.FINAL_RESULT";
+
+    Button bt;
+   int i, price1, price2,price3, price4, price5, price6, price7,price8, price9, price10, price11, price12, price13, price14, price15;
+    String items1="" ,items2="", items3="", items4="", items5="",items6="",items7="",items8="",items9="",items10="",items11="",items12="",items13="",items14="",items15="";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
+        bt = (Button) findViewById(R.id.b1);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            openfoodorder();
+
+            }
+        });
+    }
+    
+    public void CheckedBox (View view){
+
+        boolean checked = ((CheckBox) view).isChecked();
+
+        switch (view.getId())
+        {
+            case R.id.item1 :
+                if (checked) {
+                    items1 = "Kacchi Biryani 120 TK\n";
+                    price1 = 120;
+                }
+                else {
+                    items1 = "";
+                    price1 = 0;
+
+                }
+                break;
+
+            case R.id.item2 :
+                if  (checked) {
+                    items2 = "Bhuna Khichuri 90 TK\n";
+                    price2 = 90;
+                }
+                else {
+                    price2 = 0;
+                  items2 ="";
+                }
+                break;
+            case R.id.item3 :
+                if (checked) {
+                    items3 = "Patla Khichuri 80 TK\n";
+                    price3 = 80;
+                }
+                else {
+
+                    items3 ="";
+                    price3 = 0;
+                }
+                break;
+            case R.id.item4 :
+                if (checked) {
+                    items4 = "Morog Polao 120 TK\n";
+                    price4 = 120;
+                }
+                else {
+                    price4 = 0;
+                   items4 = " ";
+                }
+                break;
+            case R.id.item5 :
+                if (checked) {
+                    items5 = "Rice with (Vorta,Vaji and Daal) 100TK\n";
+                    price5 = 100;
+                }
+                else {
+                    price5 = 0;
+                  items5 = "";
+                }
+                break;
+            case R.id.item6 :
+                if (checked) {
+                    items6 = "Grilled Chicken 70 TK\n";
+                    price6 = 70;
+                }
+                else {
+                    price6 = 0;
+                    items6 = "";
+
+                }
+                    break;
+            case R.id.item7 :
+                if (checked) {
+                    price7 = 60;
+                    items7 = "Haleem 60 TK\n";
+                }
+                else {
+                    items7 = "";
+                    price7 = 0;
+                }
+                break;
+
+            case R.id.item8 :
+                if (checked) {
+                    items8 = "Sheek Kabab 110 TK\n";
+                    price8 = 110;
+                }
+                else {
+                    price8 = 0;
+                    items8 = "";
+                }
+
+                break;
+            case R.id.item9 :
+                if (checked) {
+                    items9 = "Fuchka 80 TK\n";
+                    price9 = 80;
+                }
+                else {
+                    price9 = 0;
+                    items9 = "";
+                }
+                break;
+            case R.id.item10 :
+                if (checked) {
+                    items10 = "Misti Doi 50 TK\n";
+                    price10 = 50;
+                }
+                else {
+                    price10 = 0;
+                    items10 = "";
+                }
+                break;
+            case R.id.item11 :
+                if (checked) {
+                    items11 = "Doi Chira 70 TK\n";
+                    price11 = 70;
+                }
+                else {
+                    items11 = " ";
+                    price11 = 0;
+                }
+                break;
+            case R.id.item12 :
+                if (checked) {
+                    items12 = "Falooda 100 TK\n";
+                    price12 = 100;
+                }
+                else {
+                    price12 = 0;
+                    items12 = "";
+                }
+                break;
+            case R.id.item13 :
+                if (checked) {
+                    items13 = "Rashmalai 130 TK\n";
+                    price13 = 130;
+                }
+                else {
+                    price13 = 0;
+                    items13 = "";
+                }
+                break;
+            case R.id.item14 :
+                if (checked) {
+                    items14 = "Borhani 90 TK\n";
+                    price14 = 90;
+                }
+                else {
+                    items14 = "";
+                    price14 = 0;
+                }
+                break;
+            case R.id.item15 :
+                if (checked) {
+                    items15 = "Lassi 90 TK\n";
+                    price15 = 90;
+                }
+                else {
+                    price15 = 0;
+                    items15 = "";
+                }
+                break;
+        }
+    }
+
+    public void openfoodorder(){
+        i = price1+price2+price3+price4+price5+price6+price7+price8+price9+price10+price11+price12+price13+price14+price15;
+        String items = items1+items2+items3+items4+items5+items6+items7+items8+items9+items10+items11+items12+items13+items14+items15;
+        
+        //passing data
+        Intent intent = new Intent(this, FoodOrder.class);
+        intent.putExtra(FINAL_RESULT, i);
+        intent.putExtra(FINAL_SELECTION, items);
+        startActivity(intent);
+    }
+}
+
+
+===============================================================================================
+                                      actuvity_food_order.xml
+===============================================================================================
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FoodOrder"
+    android:gravity="fill">
+
+
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="vertical">
+
+        <!-- foodOrder details -->
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            />
+
+        <!-- Bill in TK-->
+        <TextView
+            android:id="@+id/tv0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"
+            />
+
+        <!-- Bill in USD -->
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="18sp"
+            />
+</TableLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+        <Button
+            android:id="@+id/callb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/call" />
+
+        <Button
+            android:id="@+id/smsb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/send_sms" />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_green_dark" />
+        </TableLayout>
+</LinearLayout>
+
+
+================================================================================================
+                                      FoodOrder.java
+================================================================================================
+
+
+package blog.techanimate.sakib.foodorder;
+
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.text.DecimalFormat;
+
+public class FoodOrder extends AppCompatActivity {
+    TextView tv, tvx, tvs;
+    DecimalFormat currency = new DecimalFormat("$###,##.##");  //Currency format
+    Button btn, btn1;
+    TextView   tv2;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_food_order);
+
+
+        Intent intent = getIntent();
+        int result = intent.getIntExtra(Menu.FINAL_RESULT, 0);
+        String text = intent.getStringExtra(Menu.FINAL_SELECTION);
+        float result2 = (float) result;
+        float USD = result2 / 80;
+
+        tv2 = (TextView) findViewById(R.id.info);
+        tv2.setText("Kindly make sure that you've allowed the permission for making call.\n" + "Make a call or send your address to 5566 for confirming your order.");
+
+        tv = (TextView) findViewById(R.id.tv0);
+        tvx = (TextView) findViewById(R.id.tv1);
+        tvs = (TextView) findViewById(R.id.tv2);
+
+        tv.setText("You need to pay : " + "" + result + " TAKA");
+        tvx.setText("You need to pay: " + "" + currency.format(USD) + " ($1 = 80 TK)");
+        tvs.setText(text);
+
+        //for call
+        btn = (Button) findViewById(R.id.callb);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                String number = "5566";
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + number));
+
+                if (ActivityCompat.checkSelfPermission(FoodOrder.this,
+                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                startActivity(callIntent);
+            }
+
+        });
+
+        //for SMS
+        btn1 = (Button) findViewById(R.id.smsb);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+                sendIntent.putExtra( "sms body", "");
+                sendIntent.setType("vnd.android-dir/mms-sms");
+                startActivity(sendIntent);
+            }
+
+        });
+    }
+    }
+
+
+
+====================================================================================
+                          Android Manifest Changes
+====================================================================================
+                         app>manifest>AndroidManifest.xml
+                   =================================================
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="blog.techanimate.sakib.foodorder">
+
+        <uses-permission android:name="android.permission.CALL_PHONE"/>   <!-- call permission -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>         <!-- SMS permission -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FoodOrder"
+            android:parentActivityName=".Menu"></activity>
+    </application>
+
+</manifest>
+
+
+
+======================================================================================
+                             app>reas>values>strings.xml
+=======================================================================================
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Food Order</string>
+    <string name="call">Call</string>
+    <string name="send_sms">Send SMS</string>
+</resources>
+
+
+
